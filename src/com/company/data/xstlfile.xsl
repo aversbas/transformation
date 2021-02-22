@@ -21,23 +21,18 @@
     </xsl:template>
 
     <!-- Top Level Heading -->
-    <xsl:template match="/article/section/section">
+    <xsl:template match="/*/section">
         <div>
             <xsl:apply-templates select="section|B|I|U|DEF|link"/>
         </div>
         <xsl:apply-templates select="section|PARA|list|NOTE"/>
     </xsl:template>
 
-    <!--    &lt;!&ndash; Second-Level Heading &ndash;&gt;-->
-    <!--    <xsl:template match="/article/section/section">-->
-    <!--        <h3> <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/> </h3>-->
-    <!--        <xsl:apply-templates select="section|PARA|LIST|NOTE"/>-->
-    <!--    </xsl:template>-->
 
-    <!-- Third-Level Heading -->
-    <xsl:template match="/ARTICLE/SECT/SECT/SECT">
-        <xsl:message terminate="yes">Error: Sections can only be nested 2 deep.</xsl:message>
-    </xsl:template>
+<!--    &lt;!&ndash; Third-Level Heading &ndash;&gt;-->
+<!--    <xsl:template match="/article/section/section/section">-->
+<!--        <xsl:message terminate="yes">Error: Sections can only be nested 2 deep.</xsl:message>-->
+<!--    </xsl:template>-->
 
     <!-- Paragraph -->
     <xsl:template match="para">
@@ -68,29 +63,14 @@
         <xsl:value-of select="normalize-space()"/>
       </xsl:template>
 
-
-<!--    &lt;!&ndash; LIST  &ndash;&gt;-->
-<!--    <xsl:template match="orderedlist">-->
-<!--        <xsl:if test="@type='ordered'">-->
-<!--            <ol>-->
-<!--                <xsl:apply-templates/>-->
-<!--            </ol>-->
-<!--        </xsl:if>-->
-<!--        <xsl:if test="@type='unordered'">-->
-<!--            <ul>-->
-<!--                <xsl:apply-templates/>-->
-<!--            </ul>-->
-<!--        </xsl:if>-->
-<!--    </xsl:template>-->
-
-    <!-- LIST  -->
+    <!-- orderedlist  -->
     <xsl:template match="orderedlist">
             <ol type ="1">
                 <xsl:apply-templates/>
             </ol>
     </xsl:template>
 
-    <!-- LIST  -->
+    <!-- itemizedlist  -->
     <xsl:template match="itemizedlist">
             <ul>
                 <xsl:apply-templates/>

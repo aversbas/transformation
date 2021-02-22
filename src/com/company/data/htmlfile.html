@@ -4,14 +4,10 @@
         <h2>Introduction</h2>
         <p>The document contains a test problem for applicants, a short introduction into DocBook and many links to resources where you can learn more about technologies you are supposed to work with: XML, XSLT, HTML and so on.</p>
         <p>The test problem contains a few levels. We assume that a few days should be enough to learn all required technologies and develop a solution for the test problem. In case you complete this work faster then you can implement solutions for optional and bonus tasks. The more levels you complete, the better your chances are.</p>
-        <h2>Problem description</h2>
-        <p>The final goal of the test problem is to create an XSLT transformation which converts an XML document into HTML document. With the test problem description you get the source of this document in the XML format, or strictly speaking in DocBook, which is semantic markup language for technical documentation.</p>
-        <p>Chapters below contain a brief description of several DocBook elements (or group of elements) and a few examples, thus you can easily use this document to test your transformation.</p>
-        <h2>DocBook elements catalog</h2>
-        <p>
-            This chapter contains descriptions of the most commonly used DocBook elements with samples. We don't consider structural elements like<span style="font-style:italic;">book</span>,<span style="font-style:italic;">article</span>or<span style="font-style:italic;">chapter</span>, since for the test problem we chose only the<span style="font-style:italic;">article</span>element.
-        </p>
+        <div></div>
         <div>
+            <h2>Block-level elements</h2>
+            <p>Block-level elements in DocBook are elements like paragraphs, lists, and so forth. In the result HTML document they are usually represented with block-level elements. Next chapters briefly describe some of the block-level elements and provide ideas about how they can be rendered.</p>
             <h2>Paragraph element</h2>
             <p>
                 Element name:<span style="font-style:italic;">para</span>.
@@ -151,7 +147,71 @@
             <p>Extend this document with your own examples, where unordered list nesting is higher than 2. Test if your transformation supports such lists, modify the transformation if needed.</p>
             <p>Extend this document with your own example, where the ordered list contains another ordered list. Test if your transformation supports such lists, modify the transformation if needed.</p>
             <p>In the example above change the numbering level scheme for the second level list, i.e. 1, 2, 3, 3.1, 3.2, 4 etc</p>
+            <h2>Inline elements</h2>
+            <p>Inline-level tags are elements like emphasis, hyperlinks, and so forth. They wrap a text within a block-level element. Usually the content of these elements is highlighted with a different font (different font family, font style, font weight etc).</p>
+            <h2>'command' element</h2>
+            <p>
+                Element name:<span style="font-style:italic;">command</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">keycap</span>element represents a text printed on a key on a keyboard.
+            </p>
+            <p>Formatting: the content of this element should be formatted inline, the key caption is usually rendered with bold font.</p>
+            <p>Example:</p>
+            <p>PressF1to see a help window.</p>
+            <h2>'emphasis' element</h2>
+            <p>
+                Element name:<span style="font-style:italic;">emphasis</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">emphasis</span>element provides a method for indicating that certain text should be stressed in some way.
+            </p>
+            <p>Formatting: the content of this element should be formatted inline, emphasized text is usually rendered with italic font.</p>
+            <p>Example:</p>
+            <p>Here is thethingwe would like to emphasize.</p>
+            <h2>Optional inline elements task</h2>
+            <p>
+                Create a document with a fragment where<span style="font-style:italic;">emphasis</span>and<span style="font-style:italic;">keycap</span>elements are combined. Verify if you transformation supports them, extend it if needed.
+            </p>
+            <h2>Link elements</h2>
+            <p>Link tags are used to create links which lead to another part of the document or to any external resource, for example a website.</p>
+            <h2>Internal links</h2>
+            <p>
+                Element name:<span style="font-style:italic;">link</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">link</span>element is used to organize links to other parts of the document. Links are organized using the<span style="font-style:italic;">id</span>attribute. Each DocBook element can have an<span style="font-style:italic;">id</span>attribute. To create a link to the particular element the<span style="font-style:italic;">linkend</span>attribute value of the<span style="font-style:italic;">link</span>element should contain the same value as the<span style="font-style:italic;">id</span>attribute of the target element. The text within the<span style="font-style:italic;">link</span>element is the link text.
+            </p>
+            <p>Formatting: the links text should be rendered with underlined font in green color.</p>
+            <p>Example:</p>
+            <p>Please clickhereto go to the Introduction chapter.</p>
+            <p>Links without a correct target set, likethis, should be highlighted but shouldn't take the reader to another place.</p>
+            <h2>External links</h2>
+            <p>
+                Element name:<span style="font-style:italic;">ulink</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">ulink</span>element is used to organize links to external resources, e.g. websites. The<span style="font-style:italic;">url</span>attribute of the<span style="font-style:italic;">ulink</span>element should contain an URL of a site.
+            </p>
+            <p>Formatting: the link text should be rendered with underlined font in green color.</p>
+            <p>Example:</p>
+            <p>
+                Please click<a href="here">here</a>to read more about external links in DocBook.
+            </p>
+            <h2>Optional link elements task</h2>
+            <p>
+                In addition to the general links handling, implement<span style="font-style:italic;">endterm</span>attribute support. The<span style="font-style:italic;">endterm</span>attribute specifies the location of the text that should be used as a link label.
+            </p>
+            <p>Example:</p>
+            <p>The following link -link example- should have a label with text "Inline elements".</p>
+            <p>
+                It would also be nice to add support of rendering other inline elements inside links (e.g.<span style="font-style:italic;">keycap</span>,<span style="font-style:italic;">emphasis</span>).
+            </p>
+            <p>Example:</p>
+            <p>The following link -boldoritalic- should be rendered using corresponding fonts.</p>
         </div>
+        <h2>Block-level elements</h2>
+        <p>Block-level elements in DocBook are elements like paragraphs, lists, and so forth. In the result HTML document they are usually represented with block-level elements. Next chapters briefly describe some of the block-level elements and provide ideas about how they can be rendered.</p>
         <h2>Paragraph element</h2>
         <p>
             Element name:<span style="font-style:italic;">para</span>.
@@ -291,32 +351,8 @@
         <p>Extend this document with your own examples, where unordered list nesting is higher than 2. Test if your transformation supports such lists, modify the transformation if needed.</p>
         <p>Extend this document with your own example, where the ordered list contains another ordered list. Test if your transformation supports such lists, modify the transformation if needed.</p>
         <p>In the example above change the numbering level scheme for the second level list, i.e. 1, 2, 3, 3.1, 3.2, 4 etc</p>
-        <div>
-            <h2>'command' element</h2>
-            <p>
-                Element name:<span style="font-style:italic;">command</span>.
-            </p>
-            <p>
-                Description: the<span style="font-style:italic;">keycap</span>element represents a text printed on a key on a keyboard.
-            </p>
-            <p>Formatting: the content of this element should be formatted inline, the key caption is usually rendered with bold font.</p>
-            <p>Example:</p>
-            <p>PressF1to see a help window.</p>
-            <h2>'emphasis' element</h2>
-            <p>
-                Element name:<span style="font-style:italic;">emphasis</span>.
-            </p>
-            <p>
-                Description: the<span style="font-style:italic;">emphasis</span>element provides a method for indicating that certain text should be stressed in some way.
-            </p>
-            <p>Formatting: the content of this element should be formatted inline, emphasized text is usually rendered with italic font.</p>
-            <p>Example:</p>
-            <p>Here is thethingwe would like to emphasize.</p>
-            <h2>Optional inline elements task</h2>
-            <p>
-                Create a document with a fragment where<span style="font-style:italic;">emphasis</span>and<span style="font-style:italic;">keycap</span>elements are combined. Verify if you transformation supports them, extend it if needed.
-            </p>
-        </div>
+        <h2>Inline elements</h2>
+        <p>Inline-level tags are elements like emphasis, hyperlinks, and so forth. They wrap a text within a block-level element. Usually the content of these elements is highlighted with a different font (different font family, font style, font weight etc).</p>
         <h2>'command' element</h2>
         <p>
             Element name:<span style="font-style:italic;">command</span>.
@@ -341,42 +377,8 @@
         <p>
             Create a document with a fragment where<span style="font-style:italic;">emphasis</span>and<span style="font-style:italic;">keycap</span>elements are combined. Verify if you transformation supports them, extend it if needed.
         </p>
-        <div>
-            <h2>Internal links</h2>
-            <p>
-                Element name:<span style="font-style:italic;">link</span>.
-            </p>
-            <p>
-                Description: the<span style="font-style:italic;">link</span>element is used to organize links to other parts of the document. Links are organized using the<span style="font-style:italic;">id</span>attribute. Each DocBook element can have an<span style="font-style:italic;">id</span>attribute. To create a link to the particular element the<span style="font-style:italic;">linkend</span>attribute value of the<span style="font-style:italic;">link</span>element should contain the same value as the<span style="font-style:italic;">id</span>attribute of the target element. The text within the<span style="font-style:italic;">link</span>element is the link text.
-            </p>
-            <p>Formatting: the links text should be rendered with underlined font in green color.</p>
-            <p>Example:</p>
-            <p>Please clickhereto go to the Introduction chapter.</p>
-            <p>Links without a correct target set, likethis, should be highlighted but shouldn't take the reader to another place.</p>
-            <h2>External links</h2>
-            <p>
-                Element name:<span style="font-style:italic;">ulink</span>.
-            </p>
-            <p>
-                Description: the<span style="font-style:italic;">ulink</span>element is used to organize links to external resources, e.g. websites. The<span style="font-style:italic;">url</span>attribute of the<span style="font-style:italic;">ulink</span>element should contain an URL of a site.
-            </p>
-            <p>Formatting: the link text should be rendered with underlined font in green color.</p>
-            <p>Example:</p>
-            <p>
-                Please click<a href="here">here</a>to read more about external links in DocBook.
-            </p>
-            <h2>Optional link elements task</h2>
-            <p>
-                In addition to the general links handling, implement<span style="font-style:italic;">endterm</span>attribute support. The<span style="font-style:italic;">endterm</span>attribute specifies the location of the text that should be used as a link label.
-            </p>
-            <p>Example:</p>
-            <p>The following link -link example- should have a label with text "Inline elements".</p>
-            <p>
-                It would also be nice to add support of rendering other inline elements inside links (e.g.<span style="font-style:italic;">keycap</span>,<span style="font-style:italic;">emphasis</span>).
-            </p>
-            <p>Example:</p>
-            <p>The following link -boldoritalic- should be rendered using corresponding fonts.</p>
-        </div>
+        <h2>Link elements</h2>
+        <p>Link tags are used to create links which lead to another part of the document or to any external resource, for example a website.</p>
         <h2>Internal links</h2>
         <p>
             Element name:<span style="font-style:italic;">link</span>.
@@ -411,34 +413,201 @@
         </p>
         <p>Example:</p>
         <p>The following link -boldoritalic- should be rendered using corresponding fonts.</p>
-        <h2>Bonus tasks</h2>
-        <p>If you manage to complete the basic level transformation faster, here you can find a few bonus tasks. The complexity of bonus tasks is increased, so it makes sense to work on them in the provided order.</p>
+        <div>
+            <h2>Implement table of contents</h2>
+            <p>Extend the transformation to make it insert the table of contents (TOC) in the beginning of the document.</p>
+            <ol type="1">
+                <li>
+                    <p>TOC should have a list of all sections/titles encountered in the document</p>
+                </li>
+                <li>
+                    <p>TOC entries should have appropriate numbering and indentation regarding their position in the document hierarchy.</p>
+                </li>
+                <li>
+                    <p>TOC items should be links to the appropriate section/title, so when you click a title in the TOC, you are redirected to the corresponding section.</p>
+                </li>
+            </ol>
+            <h2>Implement multiple HTML page output</h2>
+            <p>Extend the transformation to make it generate multiple HTML pages for the input document.</p>
+            <ol type="1">
+                <li>
+                    <p>Each document section should be presented as a separate HTML page.</p>
+                </li>
+                <li>
+                    <p>
+                        There should be an<span style="font-style:italic;">index.html</span>page that contains the TOC.
+                    </p>
+                </li>
+                <li>
+                    <p>A click on a TOC entry should open the corresponding section in the same window</p>
+                </li>
+                <li>
+                    <p>If a section has child sections, then the corresponding page should contain mini-TOC names "Child Topics". Mini-TOC should have appropriate titles/links of/to child sections.</p>
+                </li>
+                <li>
+                    <p>Each page should have a navigation block at the top with links to previous, parent and next sections.</p>
+                </li>
+            </ol>
+        </div>
+        <h2>Implement table of contents</h2>
+        <p>Extend the transformation to make it insert the table of contents (TOC) in the beginning of the document.</p>
+        <ol type="1">
+            <li>
+                <p>TOC should have a list of all sections/titles encountered in the document</p>
+            </li>
+            <li>
+                <p>TOC entries should have appropriate numbering and indentation regarding their position in the document hierarchy.</p>
+            </li>
+            <li>
+                <p>TOC items should be links to the appropriate section/title, so when you click a title in the TOC, you are redirected to the corresponding section.</p>
+            </li>
+        </ol>
+        <h2>Implement multiple HTML page output</h2>
+        <p>Extend the transformation to make it generate multiple HTML pages for the input document.</p>
+        <ol type="1">
+            <li>
+                <p>Each document section should be presented as a separate HTML page.</p>
+            </li>
+            <li>
+                <p>
+                    There should be an<span style="font-style:italic;">index.html</span>page that contains the TOC.
+                </p>
+            </li>
+            <li>
+                <p>A click on a TOC entry should open the corresponding section in the same window</p>
+            </li>
+            <li>
+                <p>If a section has child sections, then the corresponding page should contain mini-TOC names "Child Topics". Mini-TOC should have appropriate titles/links of/to child sections.</p>
+            </li>
+            <li>
+                <p>Each page should have a navigation block at the top with links to previous, parent and next sections.</p>
+            </li>
+        </ol>
         <div></div>
         <div></div>
-        <h2>Tools</h2>
-        <p>It doesn't matter which XSLT processor you use. However, we want to let you know that we are working in the Java environment and use Saxon XSLT processor in most of our projects.</p>
-        <p>It would be nice if you provide a simple Ant build which allows you to run a transformation.</p>
-        <h2>Acceptance criteria</h2>
-        <p>The acceptance procedure is very simple. We run you transformation to transform the source of this document, then review the resulting HTML document.</p>
-        <p>The transformation should be completed without errors. The resulting document should contain all the contents of the original document formatted accordingly.</p>
-        <h2>Resources</h2>
-        <p>This chapter contains links to various useful resources you may need to learn more about XML, XSLT, HTML and others. You can use any information sources you like (not listed here), but we decided to share with you some our favourite ones.</p>
-        <p>All technologies (except DocBook) you are supposed to learn are developed by World Wide Web Consortium (W3C), so you can find a lot of information, including specifications and tutorials at the W3C related sites:</p>
+        <div>
+            <h2>XML</h2>
+            <p>XML (eXtensible Markup Language) is a set of rules for encoding documents electronically. It is defined in the XML 1.0 Specification produced by the W3C and several other related specifications; all are fee-free open standards. You can find a lot of information about XML at:</p>
+            <ul>
+                <li>
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/XML">http://en.wikipedia.org/wiki/XML</a>- Wikipedia page about XML, contains basic information about XML and a lot of links to useful XML-related resources.
+                    </p>
+                </li>
+            </ul>
+            <h2>XSLT</h2>
+            <p>XSLT (XSL Transformations) is a declarative, XML-based language used for the transformation of XML documents into other XML (or non-XML) documents.</p>
+            <ul>
+                <li>
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/XSLT">http://en.wikipedia.org/wiki/XSLT</a>- Wikipedia page about XSLT, provides basic information about XSLT and a lot links to useful XSLT-related resources.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://www.zvon.org/xxl/XSLTutorial/Output_rus/index.htm">http://www.zvon.org/xxl/XSLTutorial/Output_rus/index.htm</a>- one of the best XSLT tutorials/references with a lot of samples (in many languages including Russian).
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://xmlhack.ru/books/xslt">http://xmlhack.ru/books/xslt</a>- probably the best book about XSLT in Russian (partially available).
+                    </p>
+                </li>
+            </ul>
+            <h2>HTML</h2>
+            <p>HTML, which stands for Hyper Text Markup Language, is the predominant markup language for web pages. It provides the means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists etc as well as for links, quotes, and other items.</p>
+            <ul>
+                <li>
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/HTML">http://en.wikipedia.org/wiki/HTML</a>- Wikipedia page about HTML, provides basic information about HTML and a lot links to useful HTML-related resources.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://www.w3schools.com/html/default.asp">http://www.w3schools.com/html/default.asp</a>- excellent tutorials, online editor which allows you to quickly check how things work.
+                    </p>
+                </li>
+            </ul>
+            <h2>DocBook</h2>
+            <p>DocBook is a semantic markup language for technical documentation. It was originally intended for writing technical documents related to computer hardware and software but it can be used for any other sort of documentation.</p>
+            <ul>
+                <li>
+                    <p>
+                        <a href="http://www.docbook.org/">http://www.docbook.org/</a>- the official DocBook home page.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://en.wikipedia.org/wiki/DocBook">http://en.wikipedia.org/wiki/DocBook</a>- Wikipedia page about DocBook, provides basic information about DocBook and a lot links to useful DocBook-related resources.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="http://www.docbook.org/tdg/en/html/docbook.html">http://www.docbook.org/tdg/en/html/docbook.html</a>- DocBook: The Definitive Guide - very detailed book about DocBook format. Best place to search information about any element, DocBook document authoring and so on.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <h2>XML</h2>
+        <p>XML (eXtensible Markup Language) is a set of rules for encoding documents electronically. It is defined in the XML 1.0 Specification produced by the W3C and several other related specifications; all are fee-free open standards. You can find a lot of information about XML at:</p>
         <ul>
             <li>
                 <p>
-                    <a href="http://www.w3.org/">http://www.w3.org/</a>- main W3C site where all specifications, a lot of tutorials and links to other resources are available;
+                    <a href="http://en.wikipedia.org/wiki/XML">http://en.wikipedia.org/wiki/XML</a>- Wikipedia page about XML, contains basic information about XML and a lot of links to useful XML-related resources.
+                </p>
+            </li>
+        </ul>
+        <h2>XSLT</h2>
+        <p>XSLT (XSL Transformations) is a declarative, XML-based language used for the transformation of XML documents into other XML (or non-XML) documents.</p>
+        <ul>
+            <li>
+                <p>
+                    <a href="http://en.wikipedia.org/wiki/XSLT">http://en.wikipedia.org/wiki/XSLT</a>- Wikipedia page about XSLT, provides basic information about XSLT and a lot links to useful XSLT-related resources.
                 </p>
             </li>
             <li>
                 <p>
-                    <a href="http://www.w3schools.com/">http://www.w3schools.com/</a>- site with a lot of tutorials, examples and useful stuff.
+                    <a href="http://www.zvon.org/xxl/XSLTutorial/Output_rus/index.htm">http://www.zvon.org/xxl/XSLTutorial/Output_rus/index.htm</a>- one of the best XSLT tutorials/references with a lot of samples (in many languages including Russian).
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://xmlhack.ru/books/xslt">http://xmlhack.ru/books/xslt</a>- probably the best book about XSLT in Russian (partially available).
                 </p>
             </li>
         </ul>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <h2>HTML</h2>
+        <p>HTML, which stands for Hyper Text Markup Language, is the predominant markup language for web pages. It provides the means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists etc as well as for links, quotes, and other items.</p>
+        <ul>
+            <li>
+                <p>
+                    <a href="http://en.wikipedia.org/wiki/HTML">http://en.wikipedia.org/wiki/HTML</a>- Wikipedia page about HTML, provides basic information about HTML and a lot links to useful HTML-related resources.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://www.w3schools.com/html/default.asp">http://www.w3schools.com/html/default.asp</a>- excellent tutorials, online editor which allows you to quickly check how things work.
+                </p>
+            </li>
+        </ul>
+        <h2>DocBook</h2>
+        <p>DocBook is a semantic markup language for technical documentation. It was originally intended for writing technical documents related to computer hardware and software but it can be used for any other sort of documentation.</p>
+        <ul>
+            <li>
+                <p>
+                    <a href="http://www.docbook.org/">http://www.docbook.org/</a>- the official DocBook home page.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://en.wikipedia.org/wiki/DocBook">http://en.wikipedia.org/wiki/DocBook</a>- Wikipedia page about DocBook, provides basic information about DocBook and a lot links to useful DocBook-related resources.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://www.docbook.org/tdg/en/html/docbook.html">http://www.docbook.org/tdg/en/html/docbook.html</a>- DocBook: The Definitive Guide - very detailed book about DocBook format. Best place to search information about any element, DocBook document authoring and so on.
+                </p>
+            </li>
+        </ul>
     </body>
 </html>
