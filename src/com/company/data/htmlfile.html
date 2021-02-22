@@ -1,463 +1,444 @@
-<html>
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <body>
-            
         <h1 align="center">XSLT Trainee Test Problem</h1>
-            
-        
         <h2>Introduction</h2>
-                
-        <p>The document contains a test problem for applicants, a short introduction into DocBook
-            and many links to resources where you can learn more about technologies
-            you are supposed to work with: XML, XSLT, HTML and so on.</p>
-                
-        <p>The test problem contains a few levels. We assume that a few days
-            should be enough to learn all required technologies and develop a solution
-            for the test problem. In case you complete this work faster then you can
-            implement solutions for optional and bonus tasks. The more levels you
-            complete, the better your chances are.</p>
-            
-
-    
+        <p>The document contains a test problem for applicants, a short introduction into DocBook and many links to resources where you can learn more about technologies you are supposed to work with: XML, XSLT, HTML and so on.</p>
+        <p>The test problem contains a few levels. We assume that a few days should be enough to learn all required technologies and develop a solution for the test problem. In case you complete this work faster then you can implement solutions for optional and bonus tasks. The more levels you complete, the better your chances are.</p>
         <h2>Problem description</h2>
-        <p>The final goal of the test problem is to create an XSLT
-            transformation which converts an XML document into HTML document. With the
-            test problem description you get the source of this document in the XML
-            format, or strictly speaking in DocBook, which is semantic markup language
-            for technical documentation.</p>
-        <p>Chapters below contain a brief description of several DocBook
-            elements (or group of elements) and a few examples, thus you can easily
-            use this document to test your transformation.</p>
-            
+        <p>The final goal of the test problem is to create an XSLT transformation which converts an XML document into HTML document. With the test problem description you get the source of this document in the XML format, or strictly speaking in DocBook, which is semantic markup language for technical documentation.</p>
+        <p>Chapters below contain a brief description of several DocBook elements (or group of elements) and a few examples, thus you can easily use this document to test your transformation.</p>
         <h2>DocBook elements catalog</h2>
-        <p>This chapter contains descriptions of the most commonly used DocBook
-            elements with samples. We don't consider structural elements like
-            ,  or , since for
-            the test problem we chose only the  element.</p>
+        <p>
+            This chapter contains descriptions of the most commonly used DocBook elements with samples. We don't consider structural elements like<span style="font-style:italic;">book</span>,<span style="font-style:italic;">article</span>or<span style="font-style:italic;">chapter</span>, since for the test problem we chose only the<span style="font-style:italic;">article</span>element.
+        </p>
         <div>
             <h2>Paragraph element</h2>
-            <p>Element name: .</p>
-            <p>Description: the  element represents a
-                    paragraph in the document. Usually this element is rendered as a block
-                    with padding before and after it.</p>
+            <p>
+                Element name:<span style="font-style:italic;">para</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">para</span>element represents a paragraph in the document. Usually this element is rendered as a block with padding before and after it.
+            </p>
             <p>Example:</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <h2>Ordered list element</h2>
-            <p>Element name: .</p>
-            <p>Description: ordered list is a list of items where each list
-                    item is marked with a number. Ordered lists can be used for describing
-                    a procedure which contains a number of steps. Ordered list is marked
-                    with  element. Every list item in the list is
-                    represented by the  element. Content of each list
-                    item is wrapped by a  element. Besides, the
-                     element may also contain an optional
-                     element in the beginning to describe the content of
-                    the list.</p>
+            <p>
+                Element name:<span style="font-style:italic;">orderedlist</span>.
+            </p>
+            <p>
+                Description: ordered list is a list of items where each list item is marked with a number. Ordered lists can be used for describing a procedure which contains a number of steps. Ordered list is marked with<span style="font-style:italic;">orderedlist</span>element. Every list item in the list is represented by the<span style="font-style:italic;">listitem</span>element. Content of each list item is wrapped by a<span style="font-style:italic;">para</span>element. Besides, the<span style="font-style:italic;">orderedlist</span>element may also contain an optional<span style="font-style:italic;">para</span>element in the beginning to describe the content of the list.
+            </p>
             <p>Examples.</p>
-            <p>The following list is a simple ordered list with four items. By
-                    default Arabic numbers are used to mark list items.</p>
-            <p>The next list has a specific list intro element and 3 steps.
-                    List intro is a block level element (similar to paragraph) and should
-                    be appropriately indented (user should see that description
-                    corresponds to the list).</p>
-            <p>List elements can contain different block/inline level elements.
-                    The following list has several different elements inside every item.
-                    Such example of content shouldn't be a problem if your transformation
-                    is flexible and expandable.</p>
+            <p>The following list is a simple ordered list with four items. By default Arabic numbers are used to mark list items.</p>
+            <ol type="1">
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </li>
+                <li>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+                <li>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </li>
+            </ol>
+            <p>The next list has a specific list intro element and 3 steps. List intro is a block level element (similar to paragraph) and should be appropriately indented (user should see that description corresponds to the list).</p>
+            <ol type="1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <li>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+                <li>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </li>
+            </ol>
+            <p>List elements can contain different block/inline level elements. The following list has several different elements inside every item. Such example of content shouldn't be a problem if your transformation is flexible and expandable.</p>
+            <ol type="1">
+                <li>
+                    <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </li>
+                <li>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </li>
+                        <li>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </li>
+            </ol>
             <h2>Unordered list element</h2>
-            <p>Element name: .</p>
-            <p>Description: the  element is used to
-                    add a simple unordered list to the document. Each list item is
-                    represented by a single  element. All list item
-                    content is wrapped by a single  element. Also a list
-                    may contain an optional para element at the beginning to describe
-                    contents of the list.</p>
-            <p>Formatting: the list should be rendered as a simple bulleted
-                    list. When a list intro element is available it should be properly
-                    indented to let user see that it is a part of the list.</p>
+            <p>
+                Element name:<span style="font-style:italic;">itemizedlist</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">itemizedlist</span>element is used to add a simple unordered list to the document. Each list item is represented by a single<span style="font-style:italic;">listitem</span>element. All list item content is wrapped by a single<span style="font-style:italic;">para</span>element. Also a list may contain an optional para element at the beginning to describe contents of the list.
+            </p>
+            <p>Formatting: the list should be rendered as a simple bulleted list. When a list intro element is available it should be properly indented to let user see that it is a part of the list.</p>
             <p>Examples:</p>
             <p>Simple unordered list that contains four items:</p>
-                                
-            <li>
-                                        
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua.</p>
-                                    
-            </li>
-                                
-            <li>
-                                        
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    
-            </li>
-                                
-            <li>
-                                        
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    
-            </li>
-                                
-            <li>
-                                        
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    
-            </li>
-                            
+            <ul>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </li>
+                <li>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+                <li>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </li>
+            </ul>
             <p>Unordered list with a list intro and three list items:</p>
-                                
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua.</p>
-                                
-            <li>
-                                        
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    
-            </li>
-                                
-            <li>
-                                        
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    
-            </li>
-                                
-            <li>
-                                        
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    
-            </li>
-                            
-            <p>More complex unordered list where list items contain different
-                    elements (including nested unordered list):</p>
-            <p></p>
+            <ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <li>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </li>
+                <li>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </li>
+            </ul>
+            <p>More complex unordered list where list items contain different elements (including nested unordered list):</p>
+            <p>
+                <ul>
+                    <li>
+                        <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </li>
+                    <li>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </li>
+                    <li>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul>
+                            <li>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </li>
+                            <li>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </li>
+                </ul>
+            </p>
             <h2>Optional block-level elements tasks</h2>
-            <p>Change your transformation to support different bullets in the
-                    nested unordered list.</p>
-            <p>Extend this document with your own examples, where unordered
-                    list nesting is higher than 2. Test if your transformation supports
-                    such lists, modify the transformation if needed.</p>
-            <p>Extend this document with your own example, where the ordered
-                    list contains another ordered list. Test if your transformation
-                    supports such lists, modify the transformation if needed.</p>
-            <p>In the example above change the numbering level scheme for the
-                    second level list, i.e. 1, 2, 3, 3.1, 3.2, 4 etc</p>
+            <p>Change your transformation to support different bullets in the nested unordered list.</p>
+            <p>Extend this document with your own examples, where unordered list nesting is higher than 2. Test if your transformation supports such lists, modify the transformation if needed.</p>
+            <p>Extend this document with your own example, where the ordered list contains another ordered list. Test if your transformation supports such lists, modify the transformation if needed.</p>
+            <p>In the example above change the numbering level scheme for the second level list, i.e. 1, 2, 3, 3.1, 3.2, 4 etc</p>
         </div>
         <h2>Paragraph element</h2>
-        <p>Element name: .</p>
-        <p>Description: the  element represents a
-                    paragraph in the document. Usually this element is rendered as a block
-                    with padding before and after it.</p>
+        <p>
+            Element name:<span style="font-style:italic;">para</span>.
+        </p>
+        <p>
+            Description: the<span style="font-style:italic;">para</span>element represents a paragraph in the document. Usually this element is rendered as a block with padding before and after it.
+        </p>
         <p>Example:</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <h2>Ordered list element</h2>
-        <p>Element name: .</p>
-        <p>Description: ordered list is a list of items where each list
-                    item is marked with a number. Ordered lists can be used for describing
-                    a procedure which contains a number of steps. Ordered list is marked
-                    with  element. Every list item in the list is
-                    represented by the  element. Content of each list
-                    item is wrapped by a  element. Besides, the
-                     element may also contain an optional
-                     element in the beginning to describe the content of
-                    the list.</p>
+        <p>
+            Element name:<span style="font-style:italic;">orderedlist</span>.
+        </p>
+        <p>
+            Description: ordered list is a list of items where each list item is marked with a number. Ordered lists can be used for describing a procedure which contains a number of steps. Ordered list is marked with<span style="font-style:italic;">orderedlist</span>element. Every list item in the list is represented by the<span style="font-style:italic;">listitem</span>element. Content of each list item is wrapped by a<span style="font-style:italic;">para</span>element. Besides, the<span style="font-style:italic;">orderedlist</span>element may also contain an optional<span style="font-style:italic;">para</span>element in the beginning to describe the content of the list.
+        </p>
         <p>Examples.</p>
-        <p>The following list is a simple ordered list with four items. By
-                    default Arabic numbers are used to mark list items.</p>
-        <p>The next list has a specific list intro element and 3 steps.
-                    List intro is a block level element (similar to paragraph) and should
-                    be appropriately indented (user should see that description
-                    corresponds to the list).</p>
-        <p>List elements can contain different block/inline level elements.
-                    The following list has several different elements inside every item.
-                    Such example of content shouldn't be a problem if your transformation
-                    is flexible and expandable.</p>
+        <p>The following list is a simple ordered list with four items. By default Arabic numbers are used to mark list items.</p>
+        <ol type="1">
+            <li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </li>
+            <li>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </li>
+            <li>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </li>
+            <li>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+        </ol>
+        <p>The next list has a specific list intro element and 3 steps. List intro is a block level element (similar to paragraph) and should be appropriately indented (user should see that description corresponds to the list).</p>
+        <ol type="1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <li>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </li>
+            <li>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </li>
+            <li>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+        </ol>
+        <p>List elements can contain different block/inline level elements. The following list has several different elements inside every item. Such example of content shouldn't be a problem if your transformation is flexible and expandable.</p>
+        <ol type="1">
+            <li>
+                <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </li>
+            <li>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </li>
+            <li>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <ul>
+                    <li>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </li>
+                    <li>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+        </ol>
         <h2>Unordered list element</h2>
-        <p>Element name: .</p>
-        <p>Description: the  element is used to
-                    add a simple unordered list to the document. Each list item is
-                    represented by a single  element. All list item
-                    content is wrapped by a single  element. Also a list
-                    may contain an optional para element at the beginning to describe
-                    contents of the list.</p>
-        <p>Formatting: the list should be rendered as a simple bulleted
-                    list. When a list intro element is available it should be properly
-                    indented to let user see that it is a part of the list.</p>
+        <p>
+            Element name:<span style="font-style:italic;">itemizedlist</span>.
+        </p>
+        <p>
+            Description: the<span style="font-style:italic;">itemizedlist</span>element is used to add a simple unordered list to the document. Each list item is represented by a single<span style="font-style:italic;">listitem</span>element. All list item content is wrapped by a single<span style="font-style:italic;">para</span>element. Also a list may contain an optional para element at the beginning to describe contents of the list.
+        </p>
+        <p>Formatting: the list should be rendered as a simple bulleted list. When a list intro element is available it should be properly indented to let user see that it is a part of the list.</p>
         <p>Examples:</p>
         <p>Simple unordered list that contains four items:</p>
-                            
-        <li>
-                                    
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua.</p>
-                                
-        </li>
-                            
-        <li>
-                                    
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                
-        </li>
-                            
-        <li>
-                                    
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur.</p>
-                                
-        </li>
-                            
-        <li>
-                                    
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.</p>
-                                
-        </li>
-                        
+        <ul>
+            <li>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </li>
+            <li>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </li>
+            <li>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </li>
+            <li>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+        </ul>
         <p>Unordered list with a list intro and three list items:</p>
-                            
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua.</p>
-                            
-        <li>
-                                    
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                
-        </li>
-                            
-        <li>
-                                    
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur.</p>
-                                
-        </li>
-                            
-        <li>
-                                    
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.</p>
-                                
-        </li>
-                        
-        <p>More complex unordered list where list items contain different
-                    elements (including nested unordered list):</p>
-        <p></p>
+        <ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <li>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </li>
+            <li>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </li>
+            <li>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </li>
+        </ul>
+        <p>More complex unordered list where list items contain different elements (including nested unordered list):</p>
+        <p>
+            <ul>
+                <li>
+                    <p>Lorem ipsum dolor sit amet,consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </li>
+                <li>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </li>
+                        <li>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </li>
+            </ul>
+        </p>
         <h2>Optional block-level elements tasks</h2>
-        <p>Change your transformation to support different bullets in the
-                    nested unordered list.</p>
-        <p>Extend this document with your own examples, where unordered
-                    list nesting is higher than 2. Test if your transformation supports
-                    such lists, modify the transformation if needed.</p>
-        <p>Extend this document with your own example, where the ordered
-                    list contains another ordered list. Test if your transformation
-                    supports such lists, modify the transformation if needed.</p>
-        <p>In the example above change the numbering level scheme for the
-                    second level list, i.e. 1, 2, 3, 3.1, 3.2, 4 etc</p>
+        <p>Change your transformation to support different bullets in the nested unordered list.</p>
+        <p>Extend this document with your own examples, where unordered list nesting is higher than 2. Test if your transformation supports such lists, modify the transformation if needed.</p>
+        <p>Extend this document with your own example, where the ordered list contains another ordered list. Test if your transformation supports such lists, modify the transformation if needed.</p>
+        <p>In the example above change the numbering level scheme for the second level list, i.e. 1, 2, 3, 3.1, 3.2, 4 etc</p>
         <div>
             <h2>'command' element</h2>
-            <p>Element name: .</p>
-            <p>Description: the  element represents a text
-                    printed on a key on a keyboard.</p>
-            <p>Formatting: the content of this element should be formatted
-                    inline, the key caption is usually rendered with bold font.</p>
+            <p>
+                Element name:<span style="font-style:italic;">command</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">keycap</span>element represents a text printed on a key on a keyboard.
+            </p>
+            <p>Formatting: the content of this element should be formatted inline, the key caption is usually rendered with bold font.</p>
             <p>Example:</p>
-            <p>Press  to see a help window.</p>
+            <p>PressF1to see a help window.</p>
             <h2>'emphasis' element</h2>
-            <p>Element name: .</p>
-            <p>Description: the  element provides a method
-                    for indicating that certain text should be stressed in some
-                    way.</p>
-            <p>Formatting: the content of this element should be formatted
-                    inline, emphasized text is usually rendered with italic font.</p>
+            <p>
+                Element name:<span style="font-style:italic;">emphasis</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">emphasis</span>element provides a method for indicating that certain text should be stressed in some way.
+            </p>
+            <p>Formatting: the content of this element should be formatted inline, emphasized text is usually rendered with italic font.</p>
             <p>Example:</p>
-            <p>Here is the  we would like to
-                    emphasize.</p>
+            <p>Here is thethingwe would like to emphasize.</p>
             <h2>Optional inline elements task</h2>
-            <p>Create a document with a fragment where 
-                    and  elements are combined. Verify if you
-                    transformation supports them, extend it if needed.</p>
+            <p>
+                Create a document with a fragment where<span style="font-style:italic;">emphasis</span>and<span style="font-style:italic;">keycap</span>elements are combined. Verify if you transformation supports them, extend it if needed.
+            </p>
         </div>
         <h2>'command' element</h2>
-        <p>Element name: .</p>
-        <p>Description: the  element represents a text
-                    printed on a key on a keyboard.</p>
-        <p>Formatting: the content of this element should be formatted
-                    inline, the key caption is usually rendered with bold font.</p>
+        <p>
+            Element name:<span style="font-style:italic;">command</span>.
+        </p>
+        <p>
+            Description: the<span style="font-style:italic;">keycap</span>element represents a text printed on a key on a keyboard.
+        </p>
+        <p>Formatting: the content of this element should be formatted inline, the key caption is usually rendered with bold font.</p>
         <p>Example:</p>
-        <p>Press  to see a help window.</p>
+        <p>PressF1to see a help window.</p>
         <h2>'emphasis' element</h2>
-        <p>Element name: .</p>
-        <p>Description: the  element provides a method
-                    for indicating that certain text should be stressed in some
-                    way.</p>
-        <p>Formatting: the content of this element should be formatted
-                    inline, emphasized text is usually rendered with italic font.</p>
+        <p>
+            Element name:<span style="font-style:italic;">emphasis</span>.
+        </p>
+        <p>
+            Description: the<span style="font-style:italic;">emphasis</span>element provides a method for indicating that certain text should be stressed in some way.
+        </p>
+        <p>Formatting: the content of this element should be formatted inline, emphasized text is usually rendered with italic font.</p>
         <p>Example:</p>
-        <p>Here is the  we would like to
-                    emphasize.</p>
+        <p>Here is thethingwe would like to emphasize.</p>
         <h2>Optional inline elements task</h2>
-        <p>Create a document with a fragment where 
-                    and  elements are combined. Verify if you
-                    transformation supports them, extend it if needed.</p>
+        <p>
+            Create a document with a fragment where<span style="font-style:italic;">emphasis</span>and<span style="font-style:italic;">keycap</span>elements are combined. Verify if you transformation supports them, extend it if needed.
+        </p>
         <div>
             <h2>Internal links</h2>
-            <p>Element name: .</p>
-            <p>Description: the  element is used to organize
-                    links to other parts of the document. Links are organized using the
-                     attribute. Each DocBook element can have an
-                     attribute. To create a link to the particular element
-                    the  attribute value of the 
-                    element should contain the same value as the  attribute
-                    of the target element. The text within the  element
-                    is the link text.</p>
-            <p>Formatting: the links text should be rendered with underlined
-                    font in green color.</p>
+            <p>
+                Element name:<span style="font-style:italic;">link</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">link</span>element is used to organize links to other parts of the document. Links are organized using the<span style="font-style:italic;">id</span>attribute. Each DocBook element can have an<span style="font-style:italic;">id</span>attribute. To create a link to the particular element the<span style="font-style:italic;">linkend</span>attribute value of the<span style="font-style:italic;">link</span>element should contain the same value as the<span style="font-style:italic;">id</span>attribute of the target element. The text within the<span style="font-style:italic;">link</span>element is the link text.
+            </p>
+            <p>Formatting: the links text should be rendered with underlined font in green color.</p>
             <p>Example:</p>
-            <p>Please click  to
-                    go to the Introduction chapter.</p>
-            <p>Links without a correct target set, like , should be highlighted but
-                    shouldn't take the reader to another place.</p>
+            <p>Please clickhereto go to the Introduction chapter.</p>
+            <p>Links without a correct target set, likethis, should be highlighted but shouldn't take the reader to another place.</p>
             <h2>External links</h2>
-            <p>Element name: .</p>
-            <p>Description: the  element is used to organize
-                    links to external resources, e.g. websites. The 
-                    attribute of the  element should contain an URL of a
-                    site.</p>
-            <p>Formatting: the link text should be rendered with underlined
-                    font in green color.</p>
+            <p>
+                Element name:<span style="font-style:italic;">ulink</span>.
+            </p>
+            <p>
+                Description: the<span style="font-style:italic;">ulink</span>element is used to organize links to external resources, e.g. websites. The<span style="font-style:italic;">url</span>attribute of the<span style="font-style:italic;">ulink</span>element should contain an URL of a site.
+            </p>
+            <p>Formatting: the link text should be rendered with underlined font in green color.</p>
             <p>Example:</p>
-            <p>Please click  to
-                    read more about external links in DocBook.</p>
+            <p>
+                Please click<a href="here">here</a>to read more about external links in DocBook.
+            </p>
             <h2>Optional link elements task</h2>
-            <p>In addition to the general links handling, implement
-                     attribute support. The 
-                    attribute specifies the location of the text that should be used as a
-                    link label.</p>
+            <p>
+                In addition to the general links handling, implement<span style="font-style:italic;">endterm</span>attribute support. The<span style="font-style:italic;">endterm</span>attribute specifies the location of the text that should be used as a link label.
+            </p>
             <p>Example:</p>
-            <p>The following link -  - should have a
-                    label with text "Inline elements".</p>
-            <p>It would also be nice to add support of rendering other inline
-                    elements inside links (e.g. ,
-                    ).</p>
+            <p>The following link -link example- should have a label with text "Inline elements".</p>
+            <p>
+                It would also be nice to add support of rendering other inline elements inside links (e.g.<span style="font-style:italic;">keycap</span>,<span style="font-style:italic;">emphasis</span>).
+            </p>
             <p>Example:</p>
-            <p>The following link -  - should be rendered using
-                    corresponding fonts.</p>
+            <p>The following link -boldoritalic- should be rendered using corresponding fonts.</p>
         </div>
         <h2>Internal links</h2>
-        <p>Element name: .</p>
-        <p>Description: the  element is used to organize
-                    links to other parts of the document. Links are organized using the
-                     attribute. Each DocBook element can have an
-                     attribute. To create a link to the particular element
-                    the  attribute value of the 
-                    element should contain the same value as the  attribute
-                    of the target element. The text within the  element
-                    is the link text.</p>
-        <p>Formatting: the links text should be rendered with underlined
-                    font in green color.</p>
+        <p>
+            Element name:<span style="font-style:italic;">link</span>.
+        </p>
+        <p>
+            Description: the<span style="font-style:italic;">link</span>element is used to organize links to other parts of the document. Links are organized using the<span style="font-style:italic;">id</span>attribute. Each DocBook element can have an<span style="font-style:italic;">id</span>attribute. To create a link to the particular element the<span style="font-style:italic;">linkend</span>attribute value of the<span style="font-style:italic;">link</span>element should contain the same value as the<span style="font-style:italic;">id</span>attribute of the target element. The text within the<span style="font-style:italic;">link</span>element is the link text.
+        </p>
+        <p>Formatting: the links text should be rendered with underlined font in green color.</p>
         <p>Example:</p>
-        <p>Please click  to
-                    go to the Introduction chapter.</p>
-        <p>Links without a correct target set, like , should be highlighted but
-                    shouldn't take the reader to another place.</p>
+        <p>Please clickhereto go to the Introduction chapter.</p>
+        <p>Links without a correct target set, likethis, should be highlighted but shouldn't take the reader to another place.</p>
         <h2>External links</h2>
-        <p>Element name: .</p>
-        <p>Description: the  element is used to organize
-                    links to external resources, e.g. websites. The 
-                    attribute of the  element should contain an URL of a
-                    site.</p>
-        <p>Formatting: the link text should be rendered with underlined
-                    font in green color.</p>
+        <p>
+            Element name:<span style="font-style:italic;">ulink</span>.
+        </p>
+        <p>
+            Description: the<span style="font-style:italic;">ulink</span>element is used to organize links to external resources, e.g. websites. The<span style="font-style:italic;">url</span>attribute of the<span style="font-style:italic;">ulink</span>element should contain an URL of a site.
+        </p>
+        <p>Formatting: the link text should be rendered with underlined font in green color.</p>
         <p>Example:</p>
-        <p>Please click  to
-                    read more about external links in DocBook.</p>
+        <p>
+            Please click<a href="here">here</a>to read more about external links in DocBook.
+        </p>
         <h2>Optional link elements task</h2>
-        <p>In addition to the general links handling, implement
-                     attribute support. The 
-                    attribute specifies the location of the text that should be used as a
-                    link label.</p>
+        <p>
+            In addition to the general links handling, implement<span style="font-style:italic;">endterm</span>attribute support. The<span style="font-style:italic;">endterm</span>attribute specifies the location of the text that should be used as a link label.
+        </p>
         <p>Example:</p>
-        <p>The following link -  - should have a
-                    label with text "Inline elements".</p>
-        <p>It would also be nice to add support of rendering other inline
-                    elements inside links (e.g. ,
-                    ).</p>
+        <p>The following link -link example- should have a label with text "Inline elements".</p>
+        <p>
+            It would also be nice to add support of rendering other inline elements inside links (e.g.<span style="font-style:italic;">keycap</span>,<span style="font-style:italic;">emphasis</span>).
+        </p>
         <p>Example:</p>
-        <p>The following link -  - should be rendered using
-                    corresponding fonts.</p>
-            
+        <p>The following link -boldoritalic- should be rendered using corresponding fonts.</p>
         <h2>Bonus tasks</h2>
-        <p>If you manage to complete the basic level transformation faster,
-            here you can find a few bonus tasks. The complexity of bonus tasks
-            is increased, so it makes sense to work on them in the provided
-            order.</p>
+        <p>If you manage to complete the basic level transformation faster, here you can find a few bonus tasks. The complexity of bonus tasks is increased, so it makes sense to work on them in the provided order.</p>
         <div></div>
         <div></div>
-            
         <h2>Tools</h2>
-        <p>It doesn't matter which XSLT processor you use. However, we want to
-            let you know that we are working in the Java environment and use Saxon
-            XSLT processor in most of our projects.</p>
-        <p>It would be nice if you provide a simple Ant build which allows you
-            to run a transformation.</p>
-            
+        <p>It doesn't matter which XSLT processor you use. However, we want to let you know that we are working in the Java environment and use Saxon XSLT processor in most of our projects.</p>
+        <p>It would be nice if you provide a simple Ant build which allows you to run a transformation.</p>
         <h2>Acceptance criteria</h2>
-        <p>The acceptance procedure is very simple. We run you transformation
-            to transform the source of this document, then review the resulting HTML
-            document.</p>
-        <p>The transformation should be completed without errors. The resulting
-            document should contain all the contents of the original document
-            formatted accordingly.</p>
-            
+        <p>The acceptance procedure is very simple. We run you transformation to transform the source of this document, then review the resulting HTML document.</p>
+        <p>The transformation should be completed without errors. The resulting document should contain all the contents of the original document formatted accordingly.</p>
         <h2>Resources</h2>
-        <p>This chapter contains links to various useful resources you may need
-            to learn more about XML, XSLT, HTML and others. You can use any
-            information sources you like (not listed here), but we decided to share
-            with you some our favourite ones.</p>
-        <p>All technologies (except DocBook) you are supposed to learn are
-            developed by World Wide Web Consortium (W3C), so you can find a lot of
-            information, including specifications and tutorials at the W3C related
-            sites:</p>
-                    
-        <li>
-                            
-            <p> -
-                    main W3C site where all specifications, a lot of tutorials and links
-                    to other resources are available;</p>
-                        
-        </li>
-                    
-        <li>
-                            
-            <p> -
-                    site with a lot of tutorials, examples and useful stuff.</p>
-                        
-        </li>
-                
+        <p>This chapter contains links to various useful resources you may need to learn more about XML, XSLT, HTML and others. You can use any information sources you like (not listed here), but we decided to share with you some our favourite ones.</p>
+        <p>All technologies (except DocBook) you are supposed to learn are developed by World Wide Web Consortium (W3C), so you can find a lot of information, including specifications and tutorials at the W3C related sites:</p>
+        <ul>
+            <li>
+                <p>
+                    <a href="http://www.w3.org/">http://www.w3.org/</a>- main W3C site where all specifications, a lot of tutorials and links to other resources are available;
+                </p>
+            </li>
+            <li>
+                <p>
+                    <a href="http://www.w3schools.com/">http://www.w3schools.com/</a>- site with a lot of tutorials, examples and useful stuff.
+                </p>
+            </li>
+        </ul>
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-        
     </body>
 </html>

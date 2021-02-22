@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-        version="3.0" xmlns:fo="http://www.w3.org/1999/XSL/Transform"
->
+        version="3.0" xmlns:fo="http://www.w3.org/1999/XSL/Format"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/XSL/Format ">
     <xsl:output method="html"/>
     <xsl:strip-space elements="section"/>
 
     <xsl:template match="/">
-        <html><body>
-            <xsl:apply-templates/>
-        </body></html>
+        <html>
+            <body>
+                <xsl:apply-templates/>
+            </body>
+        </html>
     </xsl:template>
 
     <xsl:template match="/article/title">
-        <h1 align="center"> <xsl:apply-templates/> </h1>
+        <h1 align="center">
+            <xsl:apply-templates/>
+        </h1>
     </xsl:template>
 
     <!-- Top Level Heading -->
     <xsl:template match="/article/section/section">
-        <div> <xsl:apply-templates select="section|B|I|U|DEF|link"/> </div>
+        <div>
+            <xsl:apply-templates select="section|B|I|U|DEF|link"/>
+        </div>
         <xsl:apply-templates select="section|PARA|list|NOTE"/>
     </xsl:template>
 
-<!--    &lt;!&ndash; Second-Level Heading &ndash;&gt;-->
-<!--    <xsl:template match="/article/section/section">-->
-<!--        <h3> <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/> </h3>-->
-<!--        <xsl:apply-templates select="section|PARA|LIST|NOTE"/>-->
-<!--    </xsl:template>-->
+    <!--    &lt;!&ndash; Second-Level Heading &ndash;&gt;-->
+    <!--    <xsl:template match="/article/section/section">-->
+    <!--        <h3> <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/> </h3>-->
+    <!--        <xsl:apply-templates select="section|PARA|LIST|NOTE"/>-->
+    <!--    </xsl:template>-->
 
     <!-- Third-Level Heading -->
     <xsl:template match="/ARTICLE/SECT/SECT/SECT">
@@ -35,71 +41,82 @@
 
     <!-- Paragraph -->
     <xsl:template match="para">
-        <p> <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/> </p>
-        <xsl:apply-templates select="PARA|LIST|NOTE"/>
-    </xsl:template>
-
-<!--    <xsl:template match="code">-->
-<!--        <em style="font-weight:bold;">-->
-<!--            <xsl:apply-templates/>-->
-<!--        </em>-->
-<!--    </xsl:template>-->
-
-    <!-- code -->
-    <xsl:template match="/article/section/section/para" >
-        <span> <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/> </span>
-        <xsl:apply-templates select="code|PARA|list|NOTE"/>
+        <p>
+            <xsl:apply-templates/>
+        </p>
     </xsl:template>
 
     <!-- Code -->
-<!--    <xsl:template match="code">-->
-<!--        <span style="font-weight:bold;">-->
-<!--            <xsl:apply-templates/>-->
-<!--        </span>-->
-<!--    </xsl:template>-->
+    <xsl:template match="code">
+    <span style="font-style:italic;">
+        <xsl:apply-templates select="text()"/>
+    </span>
+    </xsl:template>
+
 
     <!-- Title -->
     <xsl:template match="title">
-        <h2> <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/> </h2>
+        <h2>
+            <xsl:apply-templates select="text()|B|I|U|DEF|LINK"/>
+        </h2>
         <xsl:apply-templates select="title|LIST|NOTE"/>
     </xsl:template>
 
     <!-- Text -->
-    <!--
+
       <xsl:template match="text()">
         <xsl:value-of select="normalize-space()"/>
       </xsl:template>
-    -->
+
+
+<!--    &lt;!&ndash; LIST  &ndash;&gt;-->
+<!--    <xsl:template match="orderedlist">-->
+<!--        <xsl:if test="@type='ordered'">-->
+<!--            <ol>-->
+<!--                <xsl:apply-templates/>-->
+<!--            </ol>-->
+<!--        </xsl:if>-->
+<!--        <xsl:if test="@type='unordered'">-->
+<!--            <ul>-->
+<!--                <xsl:apply-templates/>-->
+<!--            </ul>-->
+<!--        </xsl:if>-->
+<!--    </xsl:template>-->
 
     <!-- LIST  -->
     <xsl:template match="orderedlist">
-        <xsl:if test="@type='ordered'">
-            <ol>
+            <ol type ="1">
                 <xsl:apply-templates/>
             </ol>
-        </xsl:if>
-        <xsl:if test="@type='unordered'">
+    </xsl:template>
+
+    <!-- LIST  -->
+    <xsl:template match="itemizedlist">
             <ul>
                 <xsl:apply-templates/>
             </ul>
-        </xsl:if>
     </xsl:template>
 
     <!-- list ITEM -->
     <xsl:template match="listitem">
-        <li><xsl:apply-templates/>
+        <li>
+            <xsl:apply-templates/>
         </li>
     </xsl:template>
 
-    <xsl:template match="NOTE">
-        <blockquote><b>Note:</b><br/>
-            <xsl:apply-templates/>
-        </blockquote>
-    </xsl:template>
+<!--    <xsl:template match="NOTE">-->
+<!--        <blockquote>-->
+<!--            <b>Note:</b>-->
+<!--            <br/>-->
+<!--            <xsl:apply-templates/>-->
+<!--        </blockquote>-->
+<!--    </xsl:template>-->
 
-    <xsl:template match="DEF">
-        <i> <xsl:apply-templates/> </i>
-    </xsl:template>
+<!--    <xsl:template match="DEF">-->
+<!--        <i>-->
+<!--            <xsl:apply-templates/>-->
+<!--        </i>-->
+<!--    </xsl:template>-->
 
     <xsl:template match="B|I|U">
         <xsl:element name="{name()}">
@@ -107,7 +124,7 @@
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="link">
+    <xsl:template match="ulink">
         <xsl:if test="@target">
             <!--Target attribute specified.-->
             <xsl:call-template name="htmLink">
